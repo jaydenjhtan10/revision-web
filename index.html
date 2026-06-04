@@ -40,3 +40,314 @@
 
         header p {
             margin-top: 10px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            margin: 5px 10px;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .board-tag {
+            background-color: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            vertical-align: middle;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(0, 206, 201, 0.3);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #f1f2f6;
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #f1f2f6;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .marks {
+            float: right;
+            font-weight: 600;
+            color: #b2bec3;
+            font-size: 0.9em;
+            background: #f1f2f6;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        details {
+            margin-top: 15px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #edf2f7;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            outline: none;
+            display: flex;
+            align-items: center;
+        }
+
+        summary::marker {
+            color: var(--secondary);
+        }
+
+        .answer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dfe6e9;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark);
+            color: var(--light);
+            margin-top: 60px;
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>✨ GCSE Practice Hub</h1>
+        <p>Test your knowledge. Hide the answers until you're ready!</p>
+    </header>
+
+    <nav>
+        <a href="#biology">Biology</a>
+        <a href="#chemistry">Chemistry</a>
+        <a href="#physics">Physics</a>
+        <a href="#dt">D&T</a>
+        <a href="#compsci">Computer Science</a>
+        <a href="#maths">Maths</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="card" id="biology">
+            <h2>Biology <span class="board-tag">AQA</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[4 marks]</span>
+                <p><strong>Q1:</strong> Compare the structure of a red blood cell with the structure of a plant cell.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <ul>
+                            <li>Red blood cell has no nucleus, plant cell does.</li>
+                            <li>Red blood cell has no cell wall, plant cell does.</li>
+                            <li>Red blood cell contains haemoglobin, plant cell does not.</li>
+                            <li>Red blood cell is a biconcave disc, plant cells are often rectangular/fixed shape.</li>
+                            <li>Plant cells contain chloroplasts and a permanent vacuole, red blood cells do not.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="question-box">
+                <span class="marks">[3 marks]</span>
+                <p><strong>Q2:</strong> Explain the 'lock and key' theory of enzyme action.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>The enzyme has a specific active site (1). Only a substrate with a complementary shape can fit into the active site (2). This forms an enzyme-substrate complex, allowing the reaction to occur (3).</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="card" id="chemistry">
+            <h2>Chemistry <span class="board-tag">AQA</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[4 marks]</span>
+                <p><strong>Q1:</strong> Explain why graphite conducts electricity but diamond does not. Both are forms of carbon.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>In graphite, each carbon atom forms only 3 covalent bonds, leaving one delocalised electron per atom (2). These delocalised electrons are free to move and carry charge through the structure (1). In diamond, all 4 outer electrons are used in covalent bonding, so there are no delocalised electrons to carry charge (1).</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="card" id="physics">
+            <h2>Physics <span class="board-tag">AQA</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[3 marks]</span>
+                <p><strong>Q1:</strong> A car has a mass of 1200 kg and is traveling at 20 m/s. Calculate its kinetic energy.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>Equation: KE = 0.5 × m × v²</p>
+                        <p>KE = 0.5 × 1200 × (20²)</p>
+                        <p>KE = 0.5 × 1200 × 400 = <strong>240,000 J (or 240 kJ)</strong></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="card" id="dt">
+            <h2>Design & Technology <span class="board-tag">AQA</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[2 marks]</span>
+                <p><strong>Q1:</strong> Name one smart material and describe its main property.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p><strong>Example:</strong> Thermochromic pigment/ink (1). Changes colour in response to changes in temperature (1).</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="card" id="compsci">
+            <h2>Computer Science <span class="board-tag">OCR</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[4 marks]</span>
+                <p><strong>Q1:</strong> Describe the difference between RAM and ROM.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <ul>
+                            <li>RAM is volatile (loses data when power is off), ROM is non-volatile.</li>
+                            <li>RAM is read and write, ROM is read-only.</li>
+                            <li>RAM stores currently running programs and data, ROM stores the boot-up instructions (BIOS).</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="question-box">
+                <span class="marks">[1 mark]</span>
+                <p><strong>Q2:</strong> Convert the 8-bit binary number 01001011 into denary.</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>64 + 8 + 2 + 1 = <strong>75</strong></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="card" id="maths">
+            <h2>Mathematics (Higher) <span class="board-tag">Edexcel</span></h2>
+            
+            <div class="question-box">
+                <span class="marks">[3 marks]</span>
+                <p><strong>Q1:</strong> Expand and simplify: (2x + 3)(x - 5)</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>First: 2x²</p>
+                        <p>Outer: -10x</p>
+                        <p>Inner: +3x</p>
+                        <p>Last: -15</p>
+                        <p>Combined: <strong>2x² - 7x - 15</strong></p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="question-box">
+                <span class="marks">[2 marks]</span>
+                <p><strong>Q2:</strong> Rationalise the denominator of 6 / √3</p>
+                <details>
+                    <summary>Reveal Answer</summary>
+                    <div class="answer">
+                        <p>Multiply top and bottom by √3:</p>
+                        <p>(6 × √3) / (√3 × √3)</p>
+                        <p>6√3 / 3 = <strong>2√3</strong></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Keep grinding through those past papers. The hard work will pay off!</p>
+    </footer>
+
+</body>
+</html>
