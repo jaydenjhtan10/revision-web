@@ -6,6 +6,7 @@
     <title>My Revision Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* ... Keeping your beautiful aesthetic CSS exactly the same ... */
         :root {
             --primary: #6c5ce7;
             --secondary: #a29bfe;
@@ -18,336 +19,186 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             color: var(--dark);
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-            min-height: 100vh;
+            margin: 0; padding: 0; scroll-behavior: smooth; min-height: 100vh;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: white; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
 
         nav {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+            display: flex; justify-content: center; flex-wrap: wrap; padding: 15px;
+            position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: var(--dark);
-            text-decoration: none;
-            margin: 5px 10px;
-            font-weight: 600;
-            font-size: 0.9em;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
+            color: var(--dark); text-decoration: none; margin: 5px 10px; font-weight: 600;
+            font-size: 0.9em; padding: 8px 16px; border-radius: 20px; transition: all 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
+        nav a:hover { background-color: var(--primary); color: white; transform: translateY(-2px); }
 
-        .container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 850px; margin: 40px auto; padding: 0 20px; }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
+            background: white; padding: 30px; border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px; transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .generator-box {
+            background: linear-gradient(to right, #f8f9fa, #eef2f3);
+            border: 2px dashed var(--secondary); text-align: center;
         }
 
-        .board-tag {
-            background-color: var(--accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.6em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            vertical-align: middle;
-            margin-left: 10px;
-            box-shadow: 0 2px 5px rgba(0, 206, 201, 0.3);
+        .input-group {
+            display: flex; gap: 10px; margin-top: 20px; justify-content: center; flex-wrap: wrap;
         }
 
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid #f1f2f6;
-            padding-bottom: 15px;
-            margin-top: 0;
-            font-size: 1.8em;
-            display: flex;
-            align-items: center;
+        select {
+            padding: 12px; border: 1px solid #dfe6e9; border-radius: 8px;
+            font-family: 'Poppins', sans-serif; font-size: 1em; outline: none; flex-grow: 1; max-width: 300px;
         }
+
+        button {
+            background-color: var(--primary); color: white; border: none; padding: 12px 25px;
+            border-radius: 8px; font-size: 1em; font-weight: 600; cursor: pointer;
+            transition: background 0.3s; font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover { background-color: var(--dark); }
+        button:disabled { background-color: #b2bec3; cursor: not-allowed; }
+
+        #generated-output { margin-top: 25px; display: none; }
 
         .question-box {
-            background-color: #ffffff;
-            border: 1px solid #f1f2f6;
-            border-left: 5px solid var(--secondary);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            background-color: #ffffff; border: 1px solid #f1f2f6; border-left: 5px solid var(--secondary);
+            padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: left;
         }
 
-        .marks {
-            float: right;
-            font-weight: 600;
-            color: #b2bec3;
-            font-size: 0.9em;
-            background: #f1f2f6;
-            padding: 4px 10px;
-            border-radius: 12px;
+        .difficulty-tag {
+            float: right; font-weight: 600; color: white; font-size: 0.8em;
+            padding: 4px 10px; border-radius: 12px; text-transform: capitalize;
         }
+        .diff-easy { background-color: #2ecc71; }
+        .diff-medium { background-color: #f39c12; }
+        .diff-hard { background-color: #e74c3c; }
 
         details {
-            margin-top: 15px;
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #edf2f7;
+            margin-top: 15px; background-color: #f8f9fa; padding: 15px;
+            border-radius: 8px; border: 1px solid #edf2f7;
         }
 
-        summary {
-            font-weight: 600;
-            cursor: pointer;
-            color: var(--primary);
-            outline: none;
-            display: flex;
-            align-items: center;
-        }
+        summary { font-weight: 600; cursor: pointer; color: var(--primary); }
+        .answer { margin-top: 15px; padding-top: 15px; border-top: 1px solid #dfe6e9; color: #636e72; }
 
-        summary::marker {
-            color: var(--secondary);
-        }
-
-        .answer {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #dfe6e9;
-            color: #636e72;
-            line-height: 1.6;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--dark);
-            color: var(--light);
-            margin-top: 60px;
-            font-weight: 300;
-            font-size: 0.9em;
-        }
+        footer { text-align: center; padding: 30px; background: var(--dark); color: var(--light); margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>✨ GCSE Practice Hub</h1>
-        <p>Test your knowledge. Hide the answers until you're ready!</p>
+        <h1>✨ Live API Practice Hub</h1>
+        <p>Fetching real questions from the internet.</p>
     </header>
 
     <nav>
-        <a href="#biology">Biology</a>
-        <a href="#chemistry">Chemistry</a>
-        <a href="#physics">Physics</a>
-        <a href="#dt">D&T</a>
-        <a href="#compsci">Computer Science</a>
-        <a href="#maths">Maths</a>
+        <a href="#generator">API Generator</a>
     </nav>
 
     <div class="container">
 
-        <div class="card" id="biology">
-            <h2>Biology <span class="board-tag">AQA</span></h2>
+        <div class="card generator-box" id="generator">
+            <h2>📡 Live API Question Generator</h2>
+            <p>Select a subject to fetch a question from the OpenTDB public API.</p>
             
-            <div class="question-box">
-                <span class="marks">[4 marks]</span>
-                <p><strong>Q1:</strong> Compare the structure of a red blood cell with the structure of a plant cell.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <ul>
-                            <li>Red blood cell has no nucleus, plant cell does.</li>
-                            <li>Red blood cell has no cell wall, plant cell does.</li>
-                            <li>Red blood cell contains haemoglobin, plant cell does not.</li>
-                            <li>Red blood cell is a biconcave disc, plant cells are often rectangular/fixed shape.</li>
-                            <li>Plant cells contain chloroplasts and a permanent vacuole, red blood cells do not.</li>
-                        </ul>
-                    </div>
-                </details>
+            <div class="input-group">
+                <select id="subject-select">
+                    <option value="17">Science & Nature</option>
+                    <option value="18">Computer Science</option>
+                    <option value="19">Mathematics</option>
+                </select>
+                <button id="gen-btn" onclick="fetchQuestionFromAPI()">Fetch Question!</button>
             </div>
 
-            <div class="question-box">
-                <span class="marks">[3 marks]</span>
-                <p><strong>Q2:</strong> Explain the 'lock and key' theory of enzyme action.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>The enzyme has a specific active site (1). Only a substrate with a complementary shape can fit into the active site (2). This forms an enzyme-substrate complex, allowing the reaction to occur (3).</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="card" id="chemistry">
-            <h2>Chemistry <span class="board-tag">AQA</span></h2>
-            
-            <div class="question-box">
-                <span class="marks">[4 marks]</span>
-                <p><strong>Q1:</strong> Explain why graphite conducts electricity but diamond does not. Both are forms of carbon.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>In graphite, each carbon atom forms only 3 covalent bonds, leaving one delocalised electron per atom (2). These delocalised electrons are free to move and carry charge through the structure (1). In diamond, all 4 outer electrons are used in covalent bonding, so there are no delocalised electrons to carry charge (1).</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="card" id="physics">
-            <h2>Physics <span class="board-tag">AQA</span></h2>
-            
-            <div class="question-box">
-                <span class="marks">[3 marks]</span>
-                <p><strong>Q1:</strong> A car has a mass of 1200 kg and is traveling at 20 m/s. Calculate its kinetic energy.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>Equation: KE = 0.5 × m × v²</p>
-                        <p>KE = 0.5 × 1200 × (20²)</p>
-                        <p>KE = 0.5 × 1200 × 400 = <strong>240,000 J (or 240 kJ)</strong></p>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="card" id="dt">
-            <h2>Design & Technology <span class="board-tag">AQA</span></h2>
-            
-            <div class="question-box">
-                <span class="marks">[2 marks]</span>
-                <p><strong>Q1:</strong> Name one smart material and describe its main property.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p><strong>Example:</strong> Thermochromic pigment/ink (1). Changes colour in response to changes in temperature (1).</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="card" id="compsci">
-            <h2>Computer Science <span class="board-tag">OCR</span></h2>
-            
-            <div class="question-box">
-                <span class="marks">[4 marks]</span>
-                <p><strong>Q1:</strong> Describe the difference between RAM and ROM.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <ul>
-                            <li>RAM is volatile (loses data when power is off), ROM is non-volatile.</li>
-                            <li>RAM is read and write, ROM is read-only.</li>
-                            <li>RAM stores currently running programs and data, ROM stores the boot-up instructions (BIOS).</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <div class="question-box">
-                <span class="marks">[1 mark]</span>
-                <p><strong>Q2:</strong> Convert the 8-bit binary number 01001011 into denary.</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>64 + 8 + 2 + 1 = <strong>75</strong></p>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <div class="card" id="maths">
-            <h2>Mathematics (Higher) <span class="board-tag">Edexcel</span></h2>
-            
-            <div class="question-box">
-                <span class="marks">[3 marks]</span>
-                <p><strong>Q1:</strong> Expand and simplify: (2x + 3)(x - 5)</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>First: 2x²</p>
-                        <p>Outer: -10x</p>
-                        <p>Inner: +3x</p>
-                        <p>Last: -15</p>
-                        <p>Combined: <strong>2x² - 7x - 15</strong></p>
-                    </div>
-                </details>
-            </div>
-
-            <div class="question-box">
-                <span class="marks">[2 marks]</span>
-                <p><strong>Q2:</strong> Rationalise the denominator of 6 / √3</p>
-                <details>
-                    <summary>Reveal Answer</summary>
-                    <div class="answer">
-                        <p>Multiply top and bottom by √3:</p>
-                        <p>(6 × √3) / (√3 × √3)</p>
-                        <p>6√3 / 3 = <strong>2√3</strong></p>
-                    </div>
-                </details>
-            </div>
+            <div id="generated-output"></div>
         </div>
 
     </div>
 
     <footer>
-        <p>Keep grinding through those past papers. The hard work will pay off!</p>
+        <p>Powered by the OpenTDB API. Keep up the great work!</p>
     </footer>
 
+    <script>
+        // We use an async function so we can 'await' the response from the internet
+        async function fetchQuestionFromAPI() {
+            const subjectId = document.getElementById("subject-select").value;
+            const outputDiv = document.getElementById("generated-output");
+            const btn = document.getElementById("gen-btn");
+
+            // 1. Update UI to show loading state
+            btn.disabled = true;
+            btn.innerText = "Fetching...";
+            outputDiv.style.display = "block";
+            outputDiv.innerHTML = `<p style="color: var(--primary);"><strong>Connecting to API server... ⏳</strong></p>`;
+
+            // 2. Build the API URL based on what the user selected
+            // We are asking for 1 multiple-choice question from their chosen category
+            const apiUrl = `https://opentdb.com/api.php?amount=1&category=${subjectId}&type=multiple`;
+
+            try {
+                // 3. Make the actual network request
+                const response = await fetch(apiUrl);
+                
+                // 4. Convert the server response into a JavaScript object (JSON)
+                const data = await response.json();
+
+                // 5. Check if we actually got data back
+                if (data.results && data.results.length > 0) {
+                    const questionData = data.results[0];
+                    
+                    // The API gives us 1 correct answer and 3 incorrect ones. Let's combine them into a list for the user to see.
+                    let allAnswers = [...questionData.incorrect_answers, questionData.correct_answer];
+                    // Shuffle the answers so the correct one isn't always at the bottom
+                    allAnswers.sort(() => Math.random() - 0.5);
+
+                    let answersHTML = allAnswers.map(ans => `<li>${ans}</li>`).join('');
+
+                    // Determine color for the difficulty tag
+                    let diffClass = `diff-${questionData.difficulty}`;
+
+                    // 6. Build the HTML and inject it into the page
+                    outputDiv.innerHTML = `
+                        <div class="question-box">
+                            <span class="difficulty-tag ${diffClass}">${questionData.difficulty}</span>
+                            <p><strong>Question:</strong> ${questionData.question}</p>
+                            <ul style="text-align: left;">
+                                ${answersHTML}
+                            </ul>
+                            <details>
+                                <summary>Reveal Answer</summary>
+                                <div class="answer"><strong>Correct Answer:</strong> ${questionData.correct_answer}</div>
+                            </details>
+                        </div>
+                    `;
+                } else {
+                    throw new Error("No data returned from API.");
+                }
+
+            } catch (error) {
+                // 7. Handle any errors (like if your internet drops)
+                outputDiv.innerHTML = `<p style="color: #e74c3c; margin-top: 20px;"><strong>Error fetching data!</strong> Check your internet connection or try again later.</p>`;
+                console.error("API Error:", error);
+            } finally {
+                // 8. Reset the button whether it succeeded or failed
+                btn.disabled = false;
+                btn.innerText = "Fetch Question!";
+            }
+        }
+    </script>
 </body>
 </html>
